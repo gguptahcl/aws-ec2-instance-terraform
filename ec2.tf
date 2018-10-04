@@ -4,7 +4,7 @@ provider "aws" {
 
 
 resource "aws_instance" "ec2-instance" {
-  name = "Terraform EKS EC2 instance"	
+
   ami           = "${lookup(var.AMIS, var.AWS_REGION)}"
   instance_type = "t2.micro"
 
@@ -18,6 +18,10 @@ resource "aws_instance" "ec2-instance" {
 
   # user data
   user_data = "${data.template_cloudinit_config.cloudinit-ec2.rendered}"
+
+ tags {
+    Name = "terraform-eks-demo-ec2-instance"
+  }
 
 }
 
