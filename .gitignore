@@ -1,0 +1,12 @@
+*.zip
+*=
+*.backup
+*.tfstate
+*.tfplan
+Might not be required
+terraform.tfvars
+*.txt
+.terraform
+.git
+*.tfstate*
+*_Orig*
